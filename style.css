@@ -13,7 +13,7 @@ body {
 /* Barre de Navigation aérée */
 nav {
     background: #ffffff;
-    padding: 1.5rem 2rem; /* Plus d'espace en haut et en bas */
+    padding: 1.5rem 2rem;
     position: sticky;
     top: 0;
     border-bottom: 3px solid #dfb76c; /* Ligne dorée */
@@ -27,7 +27,7 @@ nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px; /* Plus d'espace entre les boutons */
+    gap: 40px;
 }
 nav a {
     color: #4a3b3c;
@@ -148,7 +148,6 @@ h2 {
     border: 1px solid #ffe3e7;
 }
 
-/* Bouton spécial pour le CV */
 /* Le bouton nœud pour le CV */
 .cv-btn {
     display: inline-flex;
