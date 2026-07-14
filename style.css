@@ -13,7 +13,7 @@ body {
 /* Barre de Navigation aérée */
 nav {
     background: #ffffff;
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 2rem; /* Plus d'espace en haut et en bas */
     position: sticky;
     top: 0;
     border-bottom: 3px solid #dfb76c; /* Ligne dorée */
@@ -27,7 +27,7 @@ nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 40px; /* Plus d'espace entre les boutons */
 }
 nav a {
     color: #4a3b3c;
@@ -148,31 +148,22 @@ h2 {
     border: 1px solid #ffe3e7;
 }
 
-/* Le bouton nœud pour le CV */
+/* Bouton spécial pour le CV */
 .cv-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background-color: #dfb76c; /* Doré au départ */
-    color: #ffffff !important; /* Texte blanc forcé */
-    text-decoration: none !important; /* Enlève le souligné moche */
-    padding: 15px 35px;
-    font-size: 1.1rem;
+    display: inline-block;
+    background-color: #dfb76c; /* Doré */
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
     font-weight: 600;
-    border-radius: 50px; /* Bords très arrondis pour faire doux */
-    border: 2px solid #dfb76c;
-    transition: all 0.4s ease; /* Transition douce pour le changement de couleur */
-    box-shadow: 0 4px 15px rgba(223, 183, 108, 0.2);
-    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(223, 183, 108, 0.3);
 }
-
-/* Ce qui se passe quand on passe le curseur dessus (Hover) */
 .cv-btn:hover {
-    background-color: #e5a4b4; /* Devient rose coquette */
-    border-color: #e5a4b4;
-    transform: scale(1.05); /* Effet zoom très léger et mignon */
-    box-shadow: 0 6px 20px rgba(229, 164, 180, 0.4);
+    background-color: #e5a4b4; /* Devient rose au survol */
+    transform: translateY(-2px);
+    color: white;
 }
 
 /* Style des cartes projets */
