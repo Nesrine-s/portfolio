@@ -151,31 +151,30 @@ h2 {
 /* Le bouton nœud pour le CV */
 /* Le bouton en forme de véritable nœud papillon 🎀 */
 /* Le bouton découpé en forme de nœud papillon 🎀 */
+/* Le bouton en véritable nœud papillon 🎀 */
 .cv-btn {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: #dfb76c; /* Doré au départ */
+    background-color: #dfb76c; /* Doré */
     color: #ffffff !important;
     text-decoration: none !important;
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 600;
     
-    /* Dimensions du bouton */
-    padding: 20px 60px; 
+    /* Dimensions équilibrées */
+    padding: 20px 60px;
+    min-width: 180px;
     
-    /* Le clip-path magique qui découpe la forme d'un nœud */
+    /* Découpage en forme de nœud papillon (serré au milieu, évasé sur les côtés) */
     clip-path: polygon(
-        0% 10%,      /* Haut gauche externe */
-        15% 10%,     /* Arrondi/pente haut gauche */
-        50% 35%,     /* Creux du milieu haut (le serrage du nœud) */
-        85% 10%,     /* Arrondi/pente haut droit */
-        100% 10%,    /* Haut droit externe */
-        100% 90%,    /* Bas droit externe */
-        85% 90%,     /* Arrondi/pente bas droit */
-        50% 65%,     /* Creux du milieu bas (le serrage du nœud) */
-        15% 90%,     /* Arrondi/pente bas gauche */
-        0% 90%       /* Bas gauche externe */
+        0% 0%,        /* Coin haut gauche */
+        50% 30%,      /* Pincement milieu haut */
+        100% 0%,      /* Coin haut droit */
+        100% 100%,    /* Coin bas droit */
+        50% 70%,      /* Pincement milieu bas */
+        0% 100%       /* Coin bas gauche */
     );
     
     transition: all 0.3s ease;
@@ -183,10 +182,30 @@ h2 {
     border: none;
 }
 
-/* Changement de couleur au survol */
+/* Le petit nœud rond au centre du nœud papillon */
+.cv-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    background-color: #c99d4f; /* Doré un peu plus foncé pour le relief */
+    border-radius: 50%;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+/* Effet au survol (Hover) */
 .cv-btn:hover {
-    background-color: #e5a4b4; /* Rose coquette au survol */
-    transform: scale(1.05); /* Léger effet de dynamisme */
+    background-color: #e5a4b4; /* Devient rose */
+    transform: scale(1.05); /* Zoom léger */
+}
+
+/* Le petit nœud central devient rose foncé au survol */
+.cv-btn:hover::before {
+    background-color: #d18799;
 }
 
 /* Style des cartes projets */
