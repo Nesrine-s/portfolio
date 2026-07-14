@@ -149,30 +149,69 @@ h2 {
 }
 
 /* Le bouton nœud pour le CV */
+/* Le bouton en forme de véritable nœud papillon 🎀 */
 .cv-btn {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    background-color: #dfb76c; /* Doré au départ */
-    color: #ffffff !important; /* Texte blanc forcé */
-    text-decoration: none !important; /* Enlève le souligné moche */
-    padding: 15px 35px;
-    font-size: 1.1rem;
+    background-color: #dfb76c; /* Le "nœud" central */
+    color: #ffffff !important;
+    text-decoration: none !important;
+    padding: 12px 35px;
+    font-size: 1.05rem;
     font-weight: 600;
-    border-radius: 50px; /* Bords très arrondis pour faire doux */
-    border: 2px solid #dfb76c;
-    transition: all 0.4s ease; /* Transition douce pour le changement de couleur */
-    box-shadow: 0 4px 15px rgba(223, 183, 108, 0.2);
+    border-radius: 12px; /* Centre légèrement arrondi */
+    transition: all 0.3s ease;
     cursor: pointer;
+    z-index: 1;
+    margin: 15px 45px; /* On laisse de la place sur les côtés pour les boucles */
+    border: none;
+    box-shadow: 0 4px 10px rgba(223, 183, 108, 0.2);
 }
 
-/* Ce qui se passe quand on passe le curseur dessus (Hover) */
+/* Boucle Gauche du nœud */
+.cv-btn::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: -35px;
+    width: 55px;
+    height: calc(100% + 16px);
+    background-color: #dfb76c;
+    border-radius: 50% 15% 15% 50%; /* Forme arrondie à gauche */
+    transform: rotate(-12deg);
+    z-index: -1;
+    transition: all 0.3s ease;
+    box-shadow: -4px 4px 10px rgba(223, 183, 108, 0.15);
+}
+
+/* Boucle Droite du nœud */
+.cv-btn::after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    right: -35px;
+    width: 55px;
+    height: calc(100% + 16px);
+    background-color: #dfb76c;
+    border-radius: 15% 50% 50% 15%; /* Forme arrondie à droite */
+    transform: rotate(12deg);
+    z-index: -1;
+    transition: all 0.3s ease;
+    box-shadow: 4px 4px 10px rgba(223, 183, 108, 0.15);
+}
+
+/* ⚡ EFFET HOVER : Tout le nœud passe au rose et grossit un peu au survol ! */
 .cv-btn:hover {
-    background-color: #e5a4b4; /* Devient rose coquette */
-    border-color: #e5a4b4;
-    transform: scale(1.05); /* Effet zoom très léger et mignon */
-    box-shadow: 0 6px 20px rgba(229, 164, 180, 0.4);
+    background-color: #e5a4b4; /* Devient rose */
+    transform: scale(1.05); /* Effet zoom super mignon */
+    box-shadow: 0 6px 15px rgba(229, 164, 180, 0.3);
+}
+
+.cv-btn:hover::before,
+.cv-btn:hover::after {
+    background-color: #e5a4b4; /* Les boucles deviennent roses aussi */
 }
 
 /* Style des cartes projets */
