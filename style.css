@@ -1,18 +1,26 @@
-<!-- BARRE DE NAVIGATION CORRIGÉE -->
-    <nav>
-        <ul>
-            <li><a href="index.html">🎀 Accueil</a></li>
-            <li class="dropdown">
-                <a href="apropos.html">À propos ▼</a>
-                <!-- On force le retour à la ligne et l'espacement directement en HTML -->
-                <div class="dropdown-content" style="display: none; flex-direction: column; gap: 8px; padding: 10px;">
-                    <div style="padding: 5px 0;"><a href="apropos.html#presentation">Qui suis-je ?</a></div>
-                    <div style="padding: 5px 0;"><a href="apropos.html#objectifs">Mes Objectifs</a></div>
-                    <div style="padding: 5px 0;"><a href="apropos.html#cv">Mon CV</a></div>
-                </div>
-            </li>
-            <li><a href="tableau.html">Tableau de compétences</a></li>
-            <li><a href="projet.html">Mes Projets</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+/* Le bouton nœud pour le CV */
+.cv-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #dfb76c; /* Doré au départ */
+    color: #ffffff !important; /* Texte blanc forcé */
+    text-decoration: none !important; /* Enlève le souligné moche */
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px; /* Bords très arrondis pour faire doux */
+    border: 2px solid #dfb76c;
+    transition: all 0.4s ease; /* Transition douce pour le changement de couleur */
+    box-shadow: 0 4px 15px rgba(223, 183, 108, 0.2);
+    cursor: pointer;
+}
+
+/* Ce qui se passe quand on passe le curseur dessus (Hover) */
+.cv-btn:hover {
+    background-color: #e5a4b4; /* Devient rose coquette */
+    border-color: #e5a4b4;
+    transform: scale(1.05); /* Effet zoom très léger et mignon */
+    box-shadow: 0 6px 20px rgba(229, 164, 180, 0.4);
+}
