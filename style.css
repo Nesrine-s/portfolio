@@ -1,0 +1,112 @@
+/* Importation d'une police douce et moderne */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #fff5f6; /* Fond rose très clair */
+    color: #4a3b3c; /* Texte chocolat doux (plus doux que le noir) */
+}
+
+/* Barre de Navigation */
+nav {
+    background: #ffffff;
+    padding: 1.2rem;
+    position: sticky;
+    top: 0;
+    border-bottom: 3px solid #dfb76c; /* Ligne dorée sous le menu */
+    box-shadow: 0 2px 10px rgba(223, 183, 108, 0.1);
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+nav a {
+    color: #4a3b3c;
+    text-decoration: none;
+    font-weight: 600;
+}
+nav a:hover {
+    color: #e5a4b4; /* Rose plus soutenu au survol */
+}
+
+/* En-tête avec motif de pois dorés */
+header {
+    background-color: #fff0f2; /* Fond rose */
+    /* Motif de pois dorés chic en CSS */
+    background-image: radial-gradient(#dfb76c 15%, transparent 15%),
+                      radial-gradient(#dfb76c 15%, transparent 15%);
+    background-size: 24px 24px;
+    background-position: 0 0, 12px 12px;
+    
+    color: #4a3b3c;
+    padding: 4rem 1rem;
+    text-align: center;
+    border-bottom: 2px solid #dfb76c;
+}
+
+header h1 {
+    background: white; /* Encadré blanc pour que le titre ressorte bien */
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 50px;
+    border: 2px solid #dfb76c; /* Bordure dorée */
+    font-size: 2.2rem;
+    margin: 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+header p {
+    margin-top: 1rem;
+    font-weight: 400;
+    background: white;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Conteneur principal */
+main {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.container {
+    background: #ffffff; /* Boîtes blanches */
+    padding: 2.5rem;
+    border-radius: 20px; /* Coins très arrondis style "cute" */
+    box-shadow: 0 10px 25px rgba(229, 164, 180, 0.15); /* Ombre rosée */
+    border: 2px solid #fff0f2;
+}
+
+h2 {
+    color: #e5a4b4; /* Titres rose */
+    font-weight: 600;
+    border-bottom: 2px dashed #dfb76c; /* Ligne pointillée dorée */
+    padding-bottom: 0.6rem;
+    margin-top: 0;
+    text-align: center;
+}
+
+/* Petit noeud papillon en CSS pour décorer */
+.bowtie-decor {
+    text-align: center;
+    font-size: 2rem;
+    color: #e5a4b4;
+    margin-bottom: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #b5a4a6;
+    font-size: 0.85rem;
+}
