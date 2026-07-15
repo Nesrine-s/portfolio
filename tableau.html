@@ -3,162 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau de Compétences - Mon Portfolio</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f7f6;
-            color: #333;
-        }
-        nav {
-            background: #2c3e50;
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-        }
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            color: #1abc9c;
-        }
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #2c3e50;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-        .dropdown-content a {
-            padding: 12px 16px;
-            display: block;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        main {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        .container {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #ecf0f1;
-            padding-bottom: 0.5rem;
-            margin-top: 0;
-        }
-        /* Style du Tableau */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1.5rem;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-        th {
-            background-color: #2c3e50;
-            color: white;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        .check {
-            color: #27ae60;
-            font-weight: bold;
-            text-align: center;
-        }
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #7f8c8d;
-        }
-    </style>
+    <title>Tableau de compétences - Nesrine Sadir</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav>
         <ul>
-            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html">🎀 Accueil</a></li>
             <li class="dropdown">
                 <a href="apropos.html">À propos ▼</a>
                 <div class="dropdown-content">
-                    <a href="apropos.html#competences">Mes Compétences</a>
+                    <a href="apropos.html#presentation">Qui suis-je ?</a>
+                    <a href="apropos.html#objectifs">Mes Objectifs</a>
                     <a href="apropos.html#cv">Mon CV</a>
                 </div>
             </li>
-            <li><a href="tableau.html">Tableau de compétences</a></li>
-            <li><a href="projets.html">Mes Projets</a></li>
+            <li><a href="tableau.html" class="active">Tableau de compétences</a></li>
+            <li><a href="projet.html">Mes Projets</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
     <main>
-        <div class="container">
-            <h2>Tableau de Synthèse des Compétences</h2>
-            <p>Ce tableau récapitule les compétences acquises et validées au cours de mes situations professionnelles (projets, TP, stages).</p>
-            
-            <table>
-                <thead>
-                    <tr>
-                        <th>Code Compétence</th>
-                        <th>Intitulé de la compétence</th>
-                        <th>Réalisation associée</th>
-                        <th>Statut</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>C1.1</strong></td>
-                        <td>Gérer le patrimoine informatique</td>
-                        <td>Création et configuration du dépôt GitHub Portfolio</td>
-                        <td class="check">✔ Validé</td>
-                    </tr>
-                    <tr>
-                        <td><strong>C1.2</strong></td>
-                        <td>Développer la présence web de l'organisation</td>
-                        <td>Création du site web Portfolio (HTML/CSS)</td>
-                        <td class="check">✔ Validé</td>
-                    </tr>
-                    <tr>
-                        <td><strong>C1.3</strong></td>
-                        <td>Travailler en mode projet</td>
-                        <td>Planification des pages du portfolio</td>
-                        <td class="check">✔ En cours</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="container table-container">
+            <div class="bowtie-decor">🎀</div>
+            <h2>Tableau de Synthèse des Réalisations Professionnelles</h2>
+            <p style="text-align: center; margin-bottom: 2rem; font-style: italic;">
+                Cliquez sur les icônes de nœuds roses 🎀 dans le tableau pour ouvrir les documents de preuves associés à chaque compétence validée.
+            </p>
+
+            <div class="table-responsive">
+                <table class="competence-table">
+                    <thead>
+                        <tr>
+                            <th rowspan="2" class="col-comp">Compétences et réalisations professionnelles mises en œuvre</th>
+                            <th colspan="2" class="col-real">Réalisations en milieu professionnel (1ère année)</th>
+                            <th colspan="2" class="col-real">Réalisations en milieu professionnel (2ème année)</th>
+                        </tr>
+                        <tr>
+                            <th>Gestion de stock & Config Win 11</th>
+                            <th>Résolution tickets d'assistance</th>
+                            <th>Migration serveur, LAPS & Sophos</th>
+                            <th>Sauvegardes & DNS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="category-title">
+                            <td colspan="5">Gérer le patrimoine informatique</td>
+                        </tr>
+                        <tr>
+                            <td>Recenser et identifier les ressources numériques</td>
+                            <td class="checked"><a href="preuves/inventaire-stock.pdf" target="_blank" title="Voir la preuve : Inventaire de stock">🎀</a></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Exploiter des référentiels, normes et standards adoptés par le prestataire informatique</td>
+                            <td></td>
+                            <td></td>
+                            <td class="checked"><a href="preuves/laps-security.pdf" target="_blank" title="Voir la preuve : Implémentation LAPS">🎀</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Vérifier les conditions de la continuité d'un service informatique</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="checked"><a href="preuves/plan-sauvegarde.pdf" target="_blank" title="Voir la preuve : Plan de sauvegarde">🎀</a></td>
+                        </tr>
+                        <tr>
+                            <td>Mettre en place et vérifier les niveaux d'habilitation associés à un service</td>
+                            <td></td>
+                            <td></td>
+                            <td class="checked"><a href="preuves/habilitation-laps.pdf" target="_blank" title="Voir la preuve : Configuration LAPS">🎀</a></td>
+                            <td></td>
+                        </tr>
+
+                        <tr class="category-title">
+                            <td colspan="5">Répondre aux incidents et aux demandes d'assistance</td>
+                        </tr>
+                        <tr>
+                            <td>Collecter, suivre et orienter des demandes</td>
+                            <td></td>
+                            <td class="checked"><a href="preuves/suivi-tickets.pdf" target="_blank" title="Voir la preuve : Journal de tickets GLPI">🎀</a></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Traiter des demandes concernant les services réseau et système</td>
+                            <td></td>
+                            <td class="checked"><a href="preuves/resolution-reseau.pdf" target="_blank" title="Voir la preuve : Résolution de ticket réseau">🎀</a></td>
+                            <td class="checked"><a href="preuves/sophos-firewall.pdf" target="_blank" title="Voir la preuve : Configuration Sophos">🎀</a></td>
+                            <td class="checked"><a href="preuves/dns-resolution.pdf" target="_blank" title="Voir la preuve : Résolution DNS">🎀</a></td>
+                        </tr>
+
+                        <tr class="category-title">
+                            <td colspan="5">Développer la présence en ligne de l'organisation</td>
+                        </tr>
+                        <tr>
+                            <td>Participer à l'évolution d'un site Web exploitant les données de l'organisation</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr class="category-title">
+                            <td colspan="5">Travailler en mode projet</td>
+                        </tr>
+                        <tr>
+                            <td>Planifier les activités et analyser les écarts</td>
+                            <td></td>
+                            <td></td>
+                            <td class="checked"><a href="preuves/planning-migration.pdf" target="_blank" title="Voir la preuve : Planning Gantt">🎀</a></td>
+                            <td></td>
+                        </tr>
+
+                        <tr class="category-title">
+                            <td colspan="5">Mettre à disposition des utilisateurs un service informatique</td>
+                        </tr>
+                        <tr>
+                            <td>Déployer un service (Windows 11, Serveurs, etc.)</td>
+                            <td class="checked"><a href="preuves/config-win11.pdf" target="_blank" title="Voir la preuve : Déploiement Windows 11">🎀</a></td>
+                            <td></td>
+                            <td class="checked"><a href="preuves/migration-serveur.pdf" target="_blank" title="Voir la preuve : Migration Active Directory">🎀</a></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
 
     <footer>
-        <p>© 2026 Nesrine - Tous droits réservés</p>
+        <p>© 2026 Nesrine - Tous droits réservés 🎀</p>
     </footer>
 
 </body>
