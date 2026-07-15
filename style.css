@@ -152,60 +152,44 @@ h2 {
 /* Le bouton en forme de véritable nœud papillon 🎀 */
 /* Le bouton découpé en forme de nœud papillon 🎀 */
 /* Le bouton en véritable nœud papillon 🎀 */
+/* Le bouton avec la silhouette parfaite d'un vrai nœud en tissu 🎀 */
 .cv-btn {
-    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: #dfb76c; /* Doré */
+    
+    /* Dimensions parfaites pour que le nœud garde ses proportions */
+    width: 260px;
+    height: 120px;
+    padding: 10px 30px;
+    
+    background-color: #dfb76c; /* Couleur dorée */
     color: #ffffff !important;
     text-decoration: none !important;
-    font-size: 1rem;
-    font-weight: 600;
-    
-    /* Dimensions équilibrées */
-    padding: 20px 60px;
-    min-width: 180px;
-    
-    /* Découpage en forme de nœud papillon (serré au milieu, évasé sur les côtés) */
-    clip-path: polygon(
-        0% 0%,        /* Coin haut gauche */
-        50% 30%,      /* Pincement milieu haut */
-        100% 0%,      /* Coin haut droit */
-        100% 100%,    /* Coin bas droit */
-        50% 70%,      /* Pincement milieu bas */
-        0% 100%       /* Coin bas gauche */
-    );
+    font-size: 1.05rem;
+    font-weight: bold;
+    text-align: center;
     
     transition: all 0.3s ease;
     cursor: pointer;
     border: none;
+
+    /* Masque magique qui découpe le bouton avec la silhouette exacte du nœud en tissu */
+    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><path fill="black" d="M 90,43 C 75,35 30,14 12,17 C 4,18 1,24 1,40 C 1,56 4,62 12,63 C 30,66 75,45 90,57 C 90,62 92,75 100,75 C 108,75 110,62 110,57 C 125,45 170,66 188,63 C 196,62 199,56 199,40 C 199,24 196,18 188,17 C 170,14 125,35 110,43 C 110,38 108,25 100,25 C 92,25 90,38 90,43 Z"/></svg>');
+    mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><path fill="black" d="M 90,43 C 75,35 30,14 12,17 C 4,18 1,24 1,40 C 1,56 4,62 12,63 C 30,66 75,45 90,57 C 90,62 92,75 100,75 C 108,75 110,62 110,57 C 125,45 170,66 188,63 C 196,62 199,56 199,40 C 199,24 196,18 188,17 C 170,14 125,35 110,43 C 110,38 108,25 100,25 C 92,25 90,38 90,43 Z"/></svg>');
+    
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
 }
 
-/* Le petit nœud rond au centre du nœud papillon */
-.cv-btn::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 24px;
-    height: 24px;
-    background-color: #c99d4f; /* Doré un peu plus foncé pour le relief */
-    border-radius: 50%;
-    z-index: 2;
-    transition: all 0.3s ease;
-}
-
-/* Effet au survol (Hover) */
+/* ⚡ Effet de survol : le nœud entier passe au rose coquette */
 .cv-btn:hover {
-    background-color: #e5a4b4; /* Devient rose */
-    transform: scale(1.05); /* Zoom léger */
-}
-
-/* Le petit nœud central devient rose foncé au survol */
-.cv-btn:hover::before {
-    background-color: #d18799;
+    background-color: #e5a4b4; /* Rose */
+    transform: scale(1.05); /* Petit effet de zoom mignon */
 }
 
 /* Style des cartes projets */
