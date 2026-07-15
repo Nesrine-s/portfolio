@@ -212,28 +212,31 @@ footer {
     font-size: 0.9rem;
 }
 
-
 /* ==========================================================================
-   STYLE DU NOUVEAU TABLEAU DE SYNTHÈSE 🎀
+   STYLE DU TABLEAU PLEINE LARGEUR (SANS SCROLL HORIZONTAL) 🎀
    ========================================================================== */
 
 .table-container {
-    max-width: 1250px; /* Plus large pour les 8 colonnes */
+    width: 95%;          /* Occupe presque toute la largeur de la page */
+    max-width: 100%;     /* Permet de s'étendre au maximum sur les grands écrans */
     margin: 2rem auto;
-    padding: 20px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .table-section-title {
     color: #c99d4f;
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    margin: 2rem 0 1rem 0;
     border-left: 4px solid #dfb76c;
     padding-left: 10px;
     font-weight: 600;
+    text-align: left;
 }
 
 .table-responsive {
-    overflow-x: auto; /* Défilement horizontal sur mobile */
+    width: 100%;
+    overflow: hidden;    /* Empêche définitivement l'apparition de barres de défilement */
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(223, 183, 108, 0.12);
     margin-bottom: 2rem;
@@ -241,52 +244,67 @@ footer {
 
 .competence-table {
     width: 100%;
+    table-layout: fixed; /* Force le tableau à respecter STRICTEMENT la largeur de l'écran */
     border-collapse: collapse;
     background-color: #ffffff;
-    font-size: 0.9rem;
+    font-size: 0.82rem;  /* Taille de police légèrement réduite pour tout faire tenir proprement */
     text-align: center;
 }
 
-/* En-têtes */
+/* --- LARGEUR ET RÉPARTITION DES COLONNES --- */
+
+/* La colonne des réalisations prend 24% de la place */
+.competence-table th.col-real,
+.competence-table td.real-name {
+    width: 24%;
+    text-align: left;
+    padding-left: 12px;
+}
+
+/* La colonne période prend 10% */
+.competence-table th.col-period,
+.competence-table td.real-period {
+    width: 10%;
+}
+
+/* Les 6 colonnes de compétences se partagent équitablement les 66% restants (11% chacune) */
+.competence-table th:not(.col-real):not(.col-period),
+.competence-table td:not(.real-name):not(.real-period) {
+    width: 11%;
+}
+
+/* En-têtes du tableau */
 .competence-table th {
-    background-color: #dfb76c; /* Doré doux */
+    background-color: #dfb76c;
     color: #ffffff;
-    padding: 15px 10px;
+    padding: 10px 6px;   /* Paddings resserrés pour éviter les retours à la ligne inutiles */
     font-weight: 600;
     border: 1px solid rgba(255, 255, 255, 0.3);
-    font-size: 0.85rem;
-}
-
-/* Tailles des premières colonnes */
-.competence-table th.col-real {
-    width: 25%;
-    text-align: left;
-    padding-left: 15px;
-}
-
-.competence-table th.col-period {
-    width: 12%;
+    font-size: 0.8rem;
+    line-height: 1.2;
+    word-wrap: break-word; /* Coupe proprement les mots longs si besoin */
 }
 
 /* Cellules */
 .competence-table td {
-    padding: 15px 10px;
+    padding: 10px 6px;
     border: 1px solid #f3e9dc;
     color: #4a4a4a;
     vertical-align: middle;
+    word-wrap: break-word;
 }
 
-/* Nom de la réalisation aligné à gauche */
+/* Alignements spécifiques */
 .competence-table td.real-name {
-    text-align: left;
-    padding-left: 15px;
     color: #333333;
+    font-size: 0.85rem;
+    line-height: 1.3;
 }
 
-/* Période en italique */
 .competence-table td.real-period {
     font-style: italic;
     color: #777777;
+    font-size: 0.8rem;
 }
 
 /* Lignes alternées */
@@ -294,12 +312,13 @@ footer {
     background-color: #fdfaf6;
 }
 
-/* Cellules cochées */
+/* Cellules cochées avec les nœuds */
 .competence-table td.checked {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
+    padding: 5px;
 }
 
-/* Liens noeuds interactifs */
+/* Animation sur les petits noeuds au survol */
 .competence-table td.checked a {
     text-decoration: none;
     display: inline-block;
@@ -307,6 +326,6 @@ footer {
 }
 
 .competence-table td.checked a:hover {
-    transform: scale(1.35) rotate(10deg);
-    filter: drop-shadow(0 2px 5px rgba(229, 164, 180, 0.6));
+    transform: scale(1.3) rotate(8deg);
+    filter: drop-shadow(0 2px 4px rgba(229, 164, 180, 0.5));
 }
