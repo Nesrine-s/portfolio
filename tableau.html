@@ -31,7 +31,7 @@
             <div class="bowtie-decor">🎀</div>
             <h2>Tableau de Synthèse des Réalisations Professionnelles</h2>
             <p style="text-align: center; margin-bottom: 2rem; font-style: italic;">
-                Cliquez sur les nœuds roses 🎀 pour consulter les documents de preuves associés.
+                Cliquez sur les nœuds roses 🎀 pour afficher la preuve visuelle de chaque réalisation.
             </p>
 
             <!-- ================= TABLEAU 1 : RÉALISATIONS EN COURS DE FORMATION ================= -->
@@ -52,11 +52,14 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="real-name"><strong>Création et configuration du dépôt GitHub Portfolio</strong></td>
+                            <td class="real-name"><strong>Création du site web Farhane Elixir (WordPress)</strong></td>
                             <td class="real-period">01/09/2025 - 01/06/2026</td>
                             <td>-</td>
                             <td>-</td>
-                            <td class="checked"><a href="preuves/github-portfolio.pdf" target="_blank" title="Preuve : Dépôt GitHub">🎀</a></td>
+                            <!-- CASE COCHÉE AVEC PREUVE IMAGÉE -->
+                            <td class="checked">
+                                <span class="bowtie-btn" onclick="openModal('Farhane Elixir - WordPress', 'Preuve de la réalisation du site Web sous WordPress pour l\'organisation Farhane Elixir.', 'logo portfolio.jpg')">🎀</span>
+                            </td>
                             <td>-</td>
                             <td>-</td>
                             <td>-</td>
@@ -85,7 +88,9 @@
                         <tr>
                             <td class="real-name"><strong>Inventaire, gestion de stock des produits & installation Windows 11</strong></td>
                             <td class="real-period">01/06/2025 - 01/07/2025</td>
-                            <td class="checked"><a href="preuves/inventaire-stock.pdf" target="_blank" title="Preuve : Inventaire & Gestion de stock">🎀</a></td>
+                            <td class="checked">
+                                <span class="bowtie-btn" onclick="openModal('Gestion de Stock & Windows 11', 'Inventaire réalisé sous Excel / GLPI et déploiement de postes Windows 11.', 'preuves/win11-stock.jpg')">🎀</span>
+                            </td>
                             <td>-</td>
                             <td>-</td>
                             <td>-</td>
@@ -96,7 +101,9 @@
                             <td class="real-name"><strong>Résolution de tickets d'assistance</strong></td>
                             <td class="real-period">01/06/2025 - 01/07/2025</td>
                             <td>-</td>
-                            <td class="checked"><a href="preuves/resolution-tickets.pdf" target="_blank" title="Preuve : Résolution de tickets">🎀</a></td>
+                            <td class="checked">
+                                <span class="bowtie-btn" onclick="openModal('Résolution de Tickets GLPI', 'Prise en charge et clôture d\'incidents utilisateurs sur le logiciel de ticketing.', 'preuves/tickets-glpi.jpg')">🎀</span>
+                            </td>
                             <td>-</td>
                             <td>-</td>
                             <td>-</td>
@@ -109,7 +116,9 @@
                             <td>-</td>
                             <td>-</td>
                             <td>-</td>
-                            <td class="checked"><a href="preuves/config-sophos-win11.pdf" target="_blank" title="Preuve : Configuration Firewall & Pilotes">🎀</a></td>
+                            <td class="checked">
+                                <span class="bowtie-btn" onclick="openModal('Configuration Sophos & Scripting .bat', 'Règles de pare-feu Sophos XG et scripts d\'automatisation .bat.', 'preuves/sophos-firewall.jpg')">🎀</span>
+                            </td>
                             <td>-</td>
                         </tr>
                     </tbody>
@@ -139,7 +148,9 @@
                             <td>-</td>
                             <td>-</td>
                             <td>-</td>
-                            <td class="checked"><a href="preuves/journal-de-bord-teams.pdf" target="_blank" title="Preuve : Journal de bord Teams">🎀</a></td>
+                            <td class="checked">
+                                <span class="bowtie-btn" onclick="openModal('Journal de Bord Teams', 'Suivi quotidien des tâches et gestion de projet via OneNote / Teams.', 'preuves/teams-journal.jpg')">🎀</span>
+                            </td>
                             <td>-</td>
                             <td>-</td>
                         </tr>
@@ -151,7 +162,9 @@
                             <td>-</td>
                             <td>-</td>
                             <td>-</td>
-                            <td class="checked"><a href="preuves/notions-laps-migration.pdf" target="_blank" title="Preuve : Veille & Notions LAPS/DNS">🎀</a></td>
+                            <td class="checked">
+                                <span class="bowtie-btn" onclick="openModal('Veille & Notions LAPS / Migration', 'Prise de notes et fiches de synthèse sur la sécurité LAPS, DNS et la migration de messagerie.', 'preuves/laps-notes.jpg')">🎀</span>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -160,9 +173,46 @@
         </div>
     </main>
 
+    <!-- FENÊTRE SURGISSANTE (MODALE POPUP) POUR LES PREUVES -->
+    <div id="proofModal" class="modal">
+        <div class="modal-card">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle">Titre de la preuve</h3>
+            
+            <!-- Conteneur avec la forme rectangulaire arrondie de la photo -->
+            <div class="modal-img-container">
+                <img id="modalImg" src="" alt="Preuve de réalisation">
+            </div>
+            
+            <p id="modalDescription">Description de la preuve</p>
+        </div>
+    </div>
+
     <footer>
         <p>© 2026 Nesrine - Tous droits réservés 🎀</p>
     </footer>
+
+    <!-- SCRIPT JAVASCRIPT POUR L'OUVERTURE DE LA MODALE -->
+    <script>
+        function openModal(title, description, imageSrc) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDescription').innerText = description;
+            document.getElementById('modalImg').src = imageSrc;
+            document.getElementById('proofModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('proofModal').style.display = 'none';
+        }
+
+        // Fermer la fenêtre si on clique à l'extérieur de la carte
+        window.onclick = function(event) {
+            var modal = document.getElementById('proofModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 
 </body>
 </html>
