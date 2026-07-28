@@ -329,3 +329,100 @@ footer {
     transform: scale(1.3) rotate(8deg);
     filter: drop-shadow(0 2px 4px rgba(229, 164, 180, 0.5));
 }
+/* ==========================================================================
+   STYLE DE LA FENÊTRE SURGISSANTE (MODALE & RECTANGLE ARRONDI) 🎀
+   ========================================================================== */
+
+.bowtie-btn {
+    cursor: pointer;
+    font-size: 1.3rem;
+    display: inline-block;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.bowtie-btn:hover {
+    transform: scale(1.35) rotate(10deg);
+    filter: drop-shadow(0 2px 5px rgba(229, 164, 180, 0.6));
+}
+
+/* Arrière-plan flouté de la modale */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px); /* Floute le fond de l'écran */
+    align-items: center;
+    justify-content: center;
+}
+
+/* La carte rectangulaire principale (Coins très arrondis) */
+.modal-card {
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 550px;
+    padding: 25px;
+    border-radius: 28px; /* Forme arrondie élégante */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    position: relative;
+    text-align: center;
+    border: 2px solid #dfb76c;
+    animation: popupAnim 0.3s ease-out;
+}
+
+@keyframes popupAnim {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Bouton fermer (X) */
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #dfb76c;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-modal:hover {
+    color: #e5a4b4;
+}
+
+.modal-card h3 {
+    color: #c99d4f;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+/* Le rectangle d'image aux bords très arrondis */
+.modal-img-container {
+    width: 100%;
+    max-height: 320px;
+    overflow: hidden;
+    border-radius: 22px; /* Forme rectangulaire arrondie exacte */
+    border: 1px solid #f3e9dc;
+    margin-bottom: 15px;
+    background-color: #fafafa;
+}
+
+.modal-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Adapte parfaitement la photo au rectangle */
+    display: block;
+}
+
+.modal-card p {
+    color: #555555;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 0;
+}
