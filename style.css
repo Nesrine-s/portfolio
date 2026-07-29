@@ -507,3 +507,25 @@ footer {
     line-height: 1.4;
     margin: 0;
 }
+.modal-action {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.btn-proof {
+    display: inline-block;
+    background-color: #dfb76c;
+    color: #ffffff;
+    padding: 8px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(223, 183, 108, 0.3);
+    transition: all 0.2s ease;
+}
+
+.btn-proof:hover {
+    background-color: #c99d4f;
+    transform: translateY(-2px);
+}
