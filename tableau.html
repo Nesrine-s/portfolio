@@ -57,7 +57,7 @@
                             <td>-</td>
                             <td>-</td>
                             <td class="checked">
-                                <button type="button" class="bowtie-btn" onclick="openModal('GitHub Portfolio', 'Preuve de la création et configuration du dépôt GitHub pour le portfolio.', 'logo portfolio.jpg')">🎀</button>
+                                <button type="button" class="bowtie-btn" onclick="openModal('GitHub Portfolio', 'Preuve de la création et configuration du dépôt GitHub pour le portfolio.', 'logo portfolio_2.jpg')">🎀</button>
                             </td>
                             <td>-</td>
                             <td>-</td>
@@ -69,7 +69,7 @@
                             <td>-</td>
                             <td>-</td>
                             <td class="checked">
-                                <button type="button" class="bowtie-btn" onclick="openModal('Création d\'un site WordPress', 'Preuve du développement du site web Farhane Elixir sous WordPress.', 'logo portfolio.jpg')">🎀</button>
+                                <button type="button" class="bowtie-btn" onclick="openModal('Création d\'un site WordPress', 'Preuve du développement du site web Farhane Elixir sous WordPress.', 'logo portfolio_2.jpg')">🎀</button>
                             </td>
                             <td>-</td>
                             <td>-</td>
@@ -81,7 +81,7 @@
                             <td>-</td>
                             <td>-</td>
                             <td class="checked">
-                                <button type="button" class="bowtie-btn" onclick="openModal('Projet Chocolatin', 'Preuve de la réalisation du projet web Chocolatin.', 'logo portfolio.jpg')">🎀</button>
+                                <button type="button" class="bowtie-btn" onclick="openModal('Projet Chocolatin', 'Preuve de la réalisation du projet web Chocolatin.', 'logo portfolio_2.jpg')">🎀</button>
                             </td>
                             <td>-</td>
                             <td>-</td>
@@ -112,7 +112,7 @@
                             <td class="real-name"><strong>Inventaire, gestion de stock des produits & installation Windows 11</strong></td>
                             <td class="real-period">01/06/2025 - 01/07/2025</td>
                             <td class="checked">
-                                <button type="button" class="bowtie-btn" onclick="openModal('Gestion de Stock & Windows 11', 'Inventaire réalisé sous Excel/GLPI et déploiement de postes Windows 11.', 'logo portfolio.jpg')">🎀</button>
+                                <button type="button" class="bowtie-btn" onclick="openModal('Gestion de Stock & Windows 11', 'Inventaire réalisé sous Excel/GLPI et déploiement de postes Windows 11.', 'logo portfolio_2.jpg')">🎀</button>
                             </td>
                             <td>-</td>
                             <td>-</td>
@@ -125,7 +125,7 @@
                             <td class="real-period">01/06/2025 - 01/07/2025</td>
                             <td>-</td>
                             <td class="checked">
-                                <button type="button" class="bowtie-btn" onclick="openModal('Résolution de Tickets', 'Prise en charge et gestion d\'incidents d\'assistance utilisateur.', 'logo portfolio.jpg')">🎀</button>
+                                <button type="button" class="bowtie-btn" onclick="openModal('Résolution de Tickets', 'Prise en charge et gestion d\'incidents d\'assistance utilisateur.', 'logo portfolio_2.jpg')">🎀</button>
                             </td>
                             <td>-</td>
                             <td>-</td>
@@ -140,7 +140,7 @@
                             <td>-</td>
                             <td>-</td>
                             <td class="checked">
-                                <button type="button" class="bowtie-btn" onclick="openModal('Configuration Sophos & Pilotes', 'Vérification pilotes Windows 11, scripts .bat et règles firewall Sophos.', 'logo portfolio.jpg')">🎀</button>
+                                <button type="button" class="bowtie-btn" onclick="openModal('Configuration Sophos & Pilotes', 'Vérification pilotes Windows 11, scripts .bat et règles firewall Sophos.', 'logo portfolio_2.jpg')">🎀</button>
                             </td>
                             <td>-</td>
                         </tr>
@@ -172,7 +172,7 @@
                             <td>-</td>
                             <td>-</td>
                             <td class="checked">
-                                <button type="button" class="bowtie-btn" onclick="openModal('Journal de bord Teams', 'Suivi de projet et journal de bord tenu dans Teams.', 'logo portfolio.jpg')">🎀</button>
+                                <button type="button" class="bowtie-btn" onclick="openModal('Journal de bord Teams', 'Suivi de projet et journal de bord tenu dans Teams.', 'logo portfolio_2.jpg')">🎀</button>
                             </td>
                             <td>-</td>
                             <td>-</td>
@@ -186,7 +186,7 @@
                             <td>-</td>
                             <td>-</td>
                             <td class="checked">
-                                <button type="button" class="bowtie-btn" onclick="openModal('Veille & Notions LAPS/DNS', 'Observation de migrations, DNS et documentation sur serveur LAPS.', 'logo portfolio.jpg')">🎀</button>
+                                <button type="button" class="bowtie-btn" onclick="openModal('Veille & Notions LAPS/DNS', 'Observation de migrations, DNS et documentation sur serveur LAPS.', 'logo portfolio_2.jpg')">🎀</button>
                             </td>
                         </tr>
                     </tbody>
@@ -196,15 +196,22 @@
         </div>
     </main>
 
-    <!-- FENÊTRE SURGISSANTE (MODALE POPUP) -->
+    <!-- FENÊTRE SURGISSANTE (MODALE POPUP) AVEC BOUTON "VOIR PREUVE" -->
     <div id="proofModal" class="modal">
         <div class="modal-card">
             <span class="close-modal" onclick="closeModal()">&times;</span>
             <h3 id="modalTitle">Titre de la preuve</h3>
+            
             <div class="modal-img-container">
                 <img id="modalImg" src="" alt="Preuve de réalisation">
             </div>
+            
             <p id="modalDescription">Description de la preuve</p>
+            
+            <!-- PETIT BOUTON "VOIR PREUVE" -->
+            <div class="modal-action">
+                <a id="proofLink" href="" target="_blank" class="btn-proof">Voir preuve 🎀</a>
+            </div>
         </div>
     </div>
 
@@ -212,12 +219,18 @@
         <p>© 2026 Nesrine - Tous droits réservés 🎀</p>
     </footer>
 
-    <!-- SCRIPT JAVASCRIPT GÉRANT LE POP-UP -->
+    <!-- SCRIPT JAVASCRIPT GÉRANT LE POP-UP ET LE LIEN DE LA PREUVE -->
     <script>
         function openModal(title, description, imageSrc) {
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('modalDescription').innerText = description;
-            document.getElementById('modalImg').src = imageSrc;
+            
+            var imgElement = document.getElementById('modalImg');
+            var linkElement = document.getElementById('proofLink');
+            
+            imgElement.src = imageSrc;
+            linkElement.href = imageSrc;
+            
             document.getElementById('proofModal').style.display = 'flex';
         }
 
