@@ -196,21 +196,21 @@
         </div>
     </main>
 
-    <!-- FENÊTRE SURGISSANTE (MODALE POPUP) AVEC BOUTON "VOIR PREUVE" -->
+    <!-- FENÊTRE SURGISSANTE (MODALE POPUP) MULTI-FORMAT -->
     <div id="proofModal" class="modal">
         <div class="modal-card">
             <span class="close-modal" onclick="closeModal()">&times;</span>
             <h3 id="modalTitle">Titre de la preuve</h3>
             
-            <div class="modal-img-container">
+            <!-- Emplacement dynamique de la preuve (Image ou PDF) -->
+            <div class="modal-img-container" id="modalMediaContainer">
                 <img id="modalImg" src="" alt="Preuve de réalisation">
             </div>
             
             <p id="modalDescription">Description de la preuve</p>
             
-            <!-- PETIT BOUTON "VOIR PREUVE" -->
             <div class="modal-action">
-                <a id="proofLink" href="" target="_blank" class="btn-proof">Voir preuve 🎀</a>
+                <a id="proofLink" href="" target="_blank" class="btn-proof">Ouvrir dans un nouvel onglet 🎀</a>
             </div>
         </div>
     </div>
@@ -219,17 +219,24 @@
         <p>© 2026 Nesrine - Tous droits réservés 🎀</p>
     </footer>
 
-    <!-- SCRIPT JAVASCRIPT GÉRANT LE POP-UP ET LE LIEN DE LA PREUVE -->
+    <!-- SCRIPT ADAPTATIF IMAGE / PDF -->
     <script>
-        function openModal(title, description, imageSrc) {
+        function openModal(title, description, fileSrc) {
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('modalDescription').innerText = description;
             
-            var imgElement = document.getElementById('modalImg');
+            var container = document.getElementById('modalMediaContainer');
             var linkElement = document.getElementById('proofLink');
             
-            imgElement.src = imageSrc;
-            linkElement.href = imageSrc;
+            linkElement.href = fileSrc;
+            
+            // Si le fichier est un PDF, on génère un lecteur PDF (<embed>)
+            if (fileSrc.toLowerCase().endsWith('.pdf')) {
+                container.innerHTML = '<embed src="' + fileSrc + '" type="application/pdf" width="100%" height="400px" />';
+            } else {
+                // Sinon, on remet une balise <img>
+                container.innerHTML = '<img id="modalImg" src="' + fileSrc + '" alt="Preuve de réalisation" style="max-width:100%; height:auto;">';
+            }
             
             document.getElementById('proofModal').style.display = 'flex';
         }
