@@ -71,10 +71,6 @@
             padding-bottom: 0.5rem;
             margin-top: 0;
         }
-
-        /* === TON NOUVEAU CSS AJUSTÉ === */
-        
-        /* Container de la carte projet */
         .projet-card {
             background-color: #ffffff;
             border: 1px solid #e0e0e0;
@@ -85,35 +81,31 @@
             gap: 20px;
             align-items: center;
         }
-
         .projet-details {
             flex: 1;
         }
-
-        /* Titre stylisé dans le thème du site */
         .projet-titre {
             color: #1abc9c;
             margin-top: 0;
             font-size: 1.25rem;
         }
-
-        /* Image arrondie cliquable */
         .projet-img {
-            width: 200px;
+            width: 180px;
             height: auto;
-            border-radius: 20px; /* Arronde les angles */
+            border-radius: 20px;
             object-fit: cover;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
             display: block;
         }
-
-        /* Effet de survol au passage de la souris */
+        .projet-link {
+            text-decoration: none;
+            display: block;
+        }
         .projet-link:hover .projet-img {
             transform: scale(1.03);
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
         }
-
         footer {
             text-align: center;
             padding: 2rem;
@@ -144,7 +136,6 @@
             <h2>Mes Projets Réalisés</h2>
             <p>Retrouvez ici l'ensemble des projets, TP et ateliers de professionnalisation menés au cours de mon BTS.</p> 
             
-            <!-- Projet 1 -->
             <div class="projet-card">
                 <div class="projet-details">
                     <h3 class="projet-titre">Projet 1 : Création du Portfolio Professionnel</h3>
@@ -153,7 +144,6 @@
                 </div>
             </div>
 
-            <!-- Projet 2 (Farhane Elixir) -->
             <div class="projet-card">
                 <a href="wordpress.pdf" target="_blank" class="projet-link">
                     <img src="logo_farhane.jpg" alt="Projet Farhane Elixir" class="projet-img">
@@ -165,7 +155,6 @@
                 </div>
             </div>
 
-            <!-- Projet 3 (À venir) -->
             <div class="projet-card">
                 <div class="projet-details">
                     <h3 class="projet-titre">Projet 3 : À venir...</h3>
