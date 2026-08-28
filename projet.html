@@ -71,17 +71,36 @@
             padding-bottom: 0.5rem;
             margin-top: 0;
         }
-        /* Style des blocs projets */
+        /* Style des cartes projets */
         .project-card {
             background: #fdfdfd;
             border: 1px solid #e2e8f0;
             padding: 1.5rem;
             border-radius: 6px;
             margin-top: 1.5rem;
+            display: flex;
+            gap: 20px;
+            align-items: center;
         }
         .project-card h3 {
             margin-top: 0;
             color: #1abc9c;
+        }
+        .project-details {
+            flex: 1;
+        }
+        /* Style spécifique pour l'image cliquable */
+        .project-img {
+            width: 180px;
+            height: auto;
+            border-radius: 20px; /* Coins arrondis */
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block;
+        }
+        .project-link:hover .project-img {
+            transform: scale(1.03);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
         footer {
             text-align: center;
@@ -111,18 +130,36 @@
     <main>
         <div class="container">
             <h2>Mes Projets Réalisés</h2>
-            <p>Retrouvez ici l'ensemble des projets, TP et ateliers de professionnalisation menés au cours de mon BTS.</p>
+            <p>Retrouvez ici l'ensemble des projets, TP et ateliers de professionnalisation menés au cours de mon BTS.</p> 
             
+            <!-- Projet 1 -->
             <div class="project-card">
-                <h3>Projet 1 : Création du Portfolio Professionnel</h3>
-                <p><strong>Description :</strong> Conception et développement d'un site web vitrine pour présenter mes compétences de manière personnalisée.</p>
-                <p><strong>Technologies utilisées :</strong> HTML5, CSS3, Git, GitHub Pages.</p>
+                <div class="project-details">
+                    <h3>Projet 1 : Création du Portfolio Professionnel</h3>
+                    <p><strong>Description :</strong> Conception et développement d'un site web vitrine pour présenter mes compétences de manière personnalisée.</p>
+                    <p><strong>Technologies utilisées :</strong> HTML5, CSS3, Git, GitHub Pages.</p>
+                </div>
             </div>
 
+            <!-- Projet 2 (Farhane Elixir) avec le lien vers le PDF et la vignette aux coins arrondis -->
             <div class="project-card">
-                <h3>Projet 2 : À venir...</h3>
-                <p><strong>Description :</strong> Ce bloc accueillera mes futurs projets de programmation, de réseau ou de gestion de base de données.</p>
-                <p><strong>Technologies utilisées :</strong> En cours d'apprentissage.</p>
+                <a href="wordpress_2.pdf" target="_blank" class="project-link">
+                    <img src="logo_farhane.jpg" alt="Projet Farhane Elixir" class="project-img">
+                </a>
+                <div class="project-details">
+                    <h3>Projet 2 : Farhane Elixir (WordPress)</h3>
+                    <p><strong>Description :</strong> Conception d'un site vitrine sous WordPress pour la boutique imaginaire Farhane Elixir (UI/UX, SEO, référencement local et campagne d'e-mailing).</p>
+                    <p><strong>Technologies utilisées :</strong> WordPress, Rank Math (SEO), Brevo, HTML5/CSS3.</p>
+                </div>
+            </div>
+
+            <!-- Projet 3 (À venir) -->
+            <div class="project-card">
+                <div class="project-details">
+                    <h3>Projet 3 : À venir...</h3>
+                    <p><strong>Description :</strong> Ce bloc accueillera mes futurs projets de programmation, de réseau ou de gestion de base de données.</p>
+                    <p><strong>Technologies utilisées :</strong> En cours d'apprentissage.</p>
+                </div>
             </div>
         </div>
     </main>
