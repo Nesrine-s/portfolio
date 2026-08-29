@@ -588,3 +588,40 @@ footer {
     text-align: center;
     margin-top: 10px;
 }
+/* --- Style de la section Contact --- */
+.contact-card {
+    background: #ffffff;
+    border: 2px solid #fff0f2;
+    border-radius: 20px;
+    padding: 2.5rem 1.5rem;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 8px 20px rgba(229, 164, 180, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(223, 183, 108, 0.25);
+    border-color: #dfb76c;
+}
+
+.contact-email {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #e5a4b4;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    background-color: #fff5f6;
+    border: 1px dashed #dfb76c;
+    transition: all 0.3s ease;
+}
+
+.contact-email:hover {
+    background-color: #dfb76c;
+    color: #ffffff;
+    border-style: solid;
+}
