@@ -69,52 +69,47 @@
                             <td>-</td>
                             <td>-</td>
                         </tr>
+
+                        <!-- BLOC CERTIFICATIONS ALIGNÉ -->
                         <tr>
-                            <td class="real-name"><strong>Certification Fortinet Technical Introduction to Cybersecurity 3.0 (première année)</strong></td>
-                            <td class="real-period">01/09/2025 - 01/06/2026</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td class="checked">
-                                <button type="button" class="bowtie-btn" onclick="openModal('Fortinet Tech Intro 3.0', 'Certification Technical Introduction to Cybersecurity 3.0', 'technical-introduction-to-cybersecurity-3-0.png')">🎀</button>
+                            <td class="real-name" rowspan="4" style="vertical-align: top; padding-top: 15px;">
+                                <strong>Certifications & Développement Professionnel (Première année)</strong>
+                            </td>
+                            <td class="real-period" rowspan="4" style="vertical-align: middle;">01/09/2025 - 01/06/2026</td>
+                            <td rowspan="4">-</td>
+                            <td rowspan="4">-</td>
+                            <td rowspan="4">-</td>
+                            <td rowspan="4">-</td>
+                            <td rowspan="4">-</td>
+                            <td class="checked" style="height: 40px; padding: 5px;">
+                                <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+                                    <span style="font-size: 0.85rem; text-align: left;">• Technical Introduction to Cybersecurity 3.0 (Fortinet)</span>
+                                    <button type="button" class="bowtie-btn" onclick="openModal('Fortinet Tech Intro 3.0', 'Certification Technical Introduction to Cybersecurity 3.0', 'technical-introduction-to-cybersecurity-3-0.png')">🎀</button>
+                                </div>
                             </td>
                         </tr>
                         <tr>
-                            <td class="real-name"><strong>MOOC SecNumAcadémie ANSSI (première année)</strong></td>
-                            <td class="real-period">01/09/2025 - 01/06/2026</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td class="checked">
-                                <button type="button" class="bowtie-btn" onclick="openModal('MOOC ANSSI', 'Attestation MOOC SecNumAcadémie ANSSI', 'mooc anssi.pdf')">🎀</button>
+                            <td class="checked" style="height: 40px; padding: 5px;">
+                                <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+                                    <span style="font-size: 0.85rem; text-align: left;">• MOOC SecNumAcadémie (ANSSI)</span>
+                                    <button type="button" class="bowtie-btn" onclick="openModal('MOOC ANSSI', 'Attestation MOOC SecNumAcadémie ANSSI', 'mooc anssi.pdf')">🎀</button>
+                                </div>
                             </td>
                         </tr>
                         <tr>
-                            <td class="real-name"><strong>Introduction to Cybersecurity Cisco (première année)</strong></td>
-                            <td class="real-period">01/09/2025 - 01/06/2026</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td class="checked">
-                                <button type="button" class="bowtie-btn" onclick="openModal('Intro Cyber Cisco', 'Attestation Introduction to Cybersecurity Cisco', 'intro cyber cisco.pdf')">🎀</button>
+                            <td class="checked" style="height: 40px; padding: 5px;">
+                                <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+                                    <span style="font-size: 0.85rem; text-align: left;">• Introduction to Cybersecurity (Cisco)</span>
+                                    <button type="button" class="bowtie-btn" onclick="openModal('Intro Cyber Cisco', 'Attestation Introduction to Cybersecurity Cisco', 'intro cyber cisco.pdf')">🎀</button>
+                                </div>
                             </td>
                         </tr>
                         <tr>
-                            <td class="real-name"><strong>Certification Fortinet (première année)</strong></td>
-                            <td class="real-period">01/09/2025 - 01/06/2026</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td class="checked">
-                                <button type="button" class="bowtie-btn" onclick="openModal('Certification Fortinet', 'Certification Fortinet', 'certif fortinet.pdf')">🎀</button>
+                            <td class="checked" style="height: 40px; padding: 5px;">
+                                <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+                                    <span style="font-size: 0.85rem; text-align: left;">• Certification Fortinet</span>
+                                    <button type="button" class="bowtie-btn" onclick="openModal('Certification Fortinet', 'Certification Fortinet', 'certif fortinet.pdf')">🎀</button>
+                                </div>
                             </td>
                         </tr>
                     </tbody>
@@ -220,7 +215,6 @@
             <span class="close-modal" onclick="closeModal()">&times;</span>
             <h3 id="modalTitle">Titre de la preuve</h3>
             
-            <!-- Emplacement dynamique de la preuve (Image ou PDF) -->
             <div class="modal-img-container" id="modalMediaContainer">
                 <img id="modalImg" src="" alt="Preuve de réalisation">
             </div>
@@ -237,7 +231,6 @@
         <p>© 2026 Nesrine - Tous droits réservés 🎀</p>
     </footer>
 
-    <!-- SCRIPT ADAPTATIF IMAGE / PDF -->
     <script>
         function openModal(title, description, fileSrc) {
             document.getElementById('modalTitle').innerText = title;
@@ -248,11 +241,9 @@
             
             linkElement.href = fileSrc;
             
-            // Si le fichier est un PDF, on génère un lecteur PDF (<embed>)
             if (fileSrc.toLowerCase().endsWith('.pdf')) {
                 container.innerHTML = '<embed src="' + fileSrc + '" type="application/pdf" width="100%" height="400px" />';
             } else {
-                // Sinon, on remet une balise <img>
                 container.innerHTML = '<img id="modalImg" src="' + fileSrc + '" alt="Preuve de réalisation" style="max-width:100%; height:auto;">';
             }
             
