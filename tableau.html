@@ -67,52 +67,17 @@
                             <td>-</td>
                             <td>-</td>
                         </tr>
+                        <!-- LIGNE CERTIFICATIONS REGROUPÉES -->
                         <tr>
-                            <td class="real-name"><strong>Technical Introduction to Cybersecurity 3.0 (Fortinet)</strong></td>
-                            <td class="real-period">07/01/2026</td>
+                            <td class="real-name"><strong>Certifications</strong></td>
+                            <td class="real-period">2026</td>
                             <td>-</td>
                             <td>-</td>
                             <td>-</td>
                             <td>-</td>
                             <td>-</td>
                             <td class="checked">
-                                <button type="button" class="bowtie-btn" onclick="openModal('Fortinet Tech Intro 3.0', 'Certification Technical Introduction to Cybersecurity 3.0', 'technical-introduction-to-cybersecurity-3-0.png')">🎀</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="real-name"><strong>MOOC SecNumAcadémie (ANSSI)</strong></td>
-                            <td class="real-period">07/01/2026</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td class="checked">
-                                <button type="button" class="bowtie-btn" onclick="openModal('MOOC ANSSI', 'Attestation MOOC SecNumAcadémie ANSSI', 'mooc anssi.pdf')">🎀</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="real-name"><strong>Introduction to Cybersecurity (Cisco)</strong></td>
-                            <td class="real-period">14/04/2026</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td class="checked">
-                                <button type="button" class="bowtie-btn" onclick="openModal('Intro Cyber Cisco', 'Attestation Introduction to Cybersecurity Cisco', 'intro cyber cisco.pdf')">🎀</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="real-name"><strong>Certification Fortinet</strong></td>
-                            <td class="real-period">01/01/2026</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td class="checked">
-                                <button type="button" class="bowtie-btn" onclick="openModal('Certification Fortinet', 'Certification Fortinet', 'certif fortinet.pdf')">🎀</button>
+                                <button type="button" class="bowtie-btn" onclick="openCertifsModal()">🎀</button>
                             </td>
                         </tr>
                     </tbody>
@@ -208,6 +173,7 @@
         </div>
     </main>
 
+    <!-- MODALE standard (Projets & Stages) -->
     <div id="proofModal" class="modal">
         <div class="modal-card">
             <span class="close-modal" onclick="closeModal()">&times;</span>
@@ -225,11 +191,41 @@
         </div>
     </div>
 
+    <!-- MODALE SPÉCIFIQUE CERTIFICATIONS (avec menu déroulant) -->
+    <div id="certifModal" class="modal">
+        <div class="modal-card">
+            <span class="close-modal" onclick="closeCertifsModal()">&times;</span>
+            
+            <div style="margin-bottom: 15px;">
+                <label for="certifSelect" style="font-weight: 600; color: #c99d4f; display: block; margin-bottom: 5px;">Sélectionner une certification :</label>
+                <select id="certifSelect" onchange="changeCertif(this.value)" style="padding: 8px 12px; border-radius: 12px; border: 2px solid #dfb76c; font-family: inherit; font-size: 0.9rem; color: #4a3b3c; background: #fff5f6; cursor: pointer; width: 100%;">
+                    <option value="fortinet3">Technical Introduction to Cybersecurity 3.0 (Fortinet)</option>
+                    <option value="secnum">MOOC SecNumAcadémie (ANSSI)</option>
+                    <option value="cisco">Introduction to Cybersecurity (Cisco)</option>
+                    <option value="fortinet">Certification Fortinet</option>
+                </select>
+            </div>
+
+            <h3 id="certifTitle">Technical Introduction to Cybersecurity 3.0</h3>
+            
+            <div class="modal-img-container" id="certifMediaContainer">
+                <!-- Média chargé dynamiquement -->
+            </div>
+            
+            <p id="certifDesc">Certification Technical Introduction to Cybersecurity 3.0 (07/01/2026)</p>
+            
+            <div class="modal-action">
+                <a id="certifPdfLink" href="technical-introduction-to-cybersecurity-3-0.png" target="_blank" class="btn-proof">Ouvrir dans un nouvel onglet 🎀</a>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <p>© 2026 Nesrine - Tous droits réservés 🎀</p>
     </footer>
 
     <script>
+        // --- SCRIPT MODALE GENERALE ---
         function openModal(title, description, fileSrc) {
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('modalDescription').innerText = description;
@@ -252,10 +248,65 @@
             document.getElementById('proofModal').style.display = 'none';
         }
 
+        // --- SCRIPT MODALE CERTIFICATIONS ---
+        const certifsData = {
+            fortinet3: {
+                title: "Technical Introduction to Cybersecurity 3.0 (Fortinet)",
+                file: "technical-introduction-to-cybersecurity-3-0.png",
+                desc: "Certification Fortinet - Obtenue le 07/01/2026"
+            },
+            secnum: {
+                title: "MOOC SecNumAcadémie (ANSSI)",
+                file: "mooc anssi.pdf",
+                desc: "Attestation MOOC SecNumAcadémie ANSSI - Obtenue le 07/01/2026"
+            },
+            cisco: {
+                title: "Introduction to Cybersecurity (Cisco)",
+                file: "intro cyber cisco.pdf",
+                desc: "Attestation Introduction to Cybersecurity Cisco - Obtenue le 14/04/2026"
+            },
+            fortinet: {
+                title: "Certification Fortinet",
+                file: "certif fortinet.pdf",
+                desc: "Certification Fortinet - Obtenue le 01/01/2026"
+            }
+        };
+
+        function openCertifsModal() {
+            document.getElementById('certifSelect').value = "fortinet3";
+            changeCertif("fortinet3");
+            document.getElementById('certifModal').style.display = 'flex';
+        }
+
+        function closeCertifsModal() {
+            document.getElementById('certifModal').style.display = 'none';
+        }
+
+        function changeCertif(key) {
+            const data = certifsData[key];
+            if (data) {
+                document.getElementById('certifTitle').innerText = data.title;
+                document.getElementById('certifDesc').innerText = data.desc;
+                document.getElementById('certifPdfLink').href = data.file;
+
+                const container = document.getElementById('certifMediaContainer');
+                if (data.file.toLowerCase().endsWith('.pdf')) {
+                    container.innerHTML = '<embed src="' + data.file + '" type="application/pdf" width="100%" height="400px" />';
+                } else {
+                    container.innerHTML = '<img src="' + data.file + '" alt="Preuve certification" style="max-width:100%; height:auto;">';
+                }
+            }
+        }
+
+        // Fermeture au clic extérieur
         window.onclick = function(event) {
-            var modal = document.getElementById('proofModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
+            var proofModal = document.getElementById('proofModal');
+            var certifModal = document.getElementById('certifModal');
+            if (event.target == proofModal) {
+                proofModal.style.display = 'none';
+            }
+            if (event.target == certifModal) {
+                certifModal.style.display = 'none';
             }
         }
     </script>
