@@ -8,13 +8,11 @@
 </head>
 <body>
 
-    <!-- BARRE DE NAVIGATION CORRIGÉE -->
     <nav>
         <ul>
-            <li><a href="index.html">🎀 Accueil</a></li>
+            <li><a href="index.html">Accueil</a></li>
             <li class="dropdown">
-                <a href="apropos.html">À propos ▼</a>
-                <!-- On force le retour à la ligne et l'espacement directement en HTML -->
+                <a href="apropos.html" class="active">À propos ▼</a>
                 <div class="dropdown-content" style="display: none; flex-direction: column; gap: 8px; padding: 10px;">
                     <div style="padding: 5px 0;"><a href="apropos.html#presentation">Qui suis-je ?</a></div>
                     <div style="padding: 5px 0;"><a href="apropos.html#objectifs">Mes Objectifs</a></div>
@@ -47,12 +45,10 @@
             </div>
         </div>
 
-       <!-- Bloc CV avec le bouton Nœud Magique -->
         <div class="container" id="cv" style="text-align: center;">
             <h2>Mon Curriculum Vitae</h2>
             <p style="margin-bottom: 2rem;">Découvrez le détail de mon parcours en téléchargeant mon CV ci-dessous :</p>
             
-            <!-- Le bouton magique -->
             <a href="cv.pdf" target="_blank" class="cv-btn">
                 🎀 Télécharger mon CV (PDF) 🎀
             </a>
