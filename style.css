@@ -630,3 +630,9 @@ footer {
     line-height: 1.5;
     padding: 10px;
 }
+/* Fil d'Ariane : affichage dynamique du nœud sur l'élément actif */
+nav a.active::before {
+    content: "🎀 ";
+    display: inline-block;
+    margin-right: 4px;
+}
