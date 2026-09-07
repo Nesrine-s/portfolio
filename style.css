@@ -10,7 +10,9 @@ body {
     color: #4a3b3c; /* Texte chocolat doux */
 }
 
-/* Barre de Navigation aérée */
+/* ==========================================================================
+   BARRE DE NAVIGATION 🎀
+   ========================================================================== */
 nav {
     background: #ffffff;
     padding: 1.5rem 2rem;
@@ -20,6 +22,7 @@ nav {
     box-shadow: 0 4px 12px rgba(223, 183, 108, 0.15);
     z-index: 1000;
 }
+
 nav ul {
     list-style: none;
     margin: 0;
@@ -29,21 +32,44 @@ nav ul {
     align-items: center;
     gap: 40px;
 }
+
 nav a {
     color: #4a3b3c;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.05rem;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
+
+/* Survol des liens */
 nav a:hover {
     color: #e5a4b4; /* Rose au survol */
 }
 
-/* Sous-menu (Dropdown) ultra propre */
+/* Nœud dynamique au survol */
+nav a:not(.active):hover::before {
+    content: "🎀 ";
+    display: inline-block;
+    margin-right: 4px;
+}
+
+/* STYLE DE LA PAGE ACTUELLE (ACTIVE) 🎀 */
+nav a.active {
+    color: #e5a4b4 !important; /* Rose coquette pour la page active */
+    font-weight: 700;
+}
+
+nav a.active::before {
+    content: "🎀 ";
+    display: inline-block;
+    margin-right: 4px;
+}
+
+/* Sous-menu (Dropdown) */
 .dropdown {
     position: relative;
 }
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -57,6 +83,7 @@ nav a:hover {
     left: 50%;
     transform: translateX(-50%);
 }
+
 .dropdown-content a {
     padding: 12px 16px;
     display: block;
@@ -64,15 +91,19 @@ nav a:hover {
     text-align: center;
     font-weight: 400;
 }
+
 .dropdown-content a:hover {
     background-color: #fff5f6;
     border-radius: 10px;
 }
+
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* En-tête */
+/* ==========================================================================
+   EN-TÊTE ET STRUCTURES GÉNÉRALES
+   ========================================================================== */
 header {
     background-color: #fff0f2;
     background-image: radial-gradient(#dfb76c 15%, transparent 15%),
@@ -84,6 +115,7 @@ header {
     text-align: center;
     border-bottom: 2px solid #dfb76c;
 }
+
 header h1 {
     background: white;
     display: inline-block;
@@ -94,6 +126,7 @@ header h1 {
     margin: 0;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
+
 header p {
     margin-top: 1.2rem;
     font-weight: 400;
@@ -104,12 +137,12 @@ header p {
     font-size: 1rem;
 }
 
-/* Conteneurs */
 main {
     max-width: 850px;
     margin: 3.5rem auto;
     padding: 0 1rem;
 }
+
 .container {
     background: #ffffff;
     padding: 2.8rem;
@@ -118,6 +151,7 @@ main {
     border: 2px solid #fff0f2;
     margin-bottom: 3rem;
 }
+
 h2 {
     color: #e5a4b4;
     font-weight: 700;
@@ -128,7 +162,7 @@ h2 {
     font-size: 1.6rem;
 }
 
-/* Décorations */
+/* Éléments décoratifs */
 .bowtie-decor {
     text-align: center;
     font-size: 2.2rem;
@@ -148,33 +182,26 @@ h2 {
     border: 1px solid #ffe3e7;
 }
 
-/* Le bouton nœud pour le CV */
-/* Le bouton en forme de véritable nœud papillon 🎀 */
-/* Le bouton découpé en forme de nœud papillon 🎀 */
-/* Le bouton en véritable nœud papillon 🎀 */
-/* Le bouton avec la silhouette parfaite d'un vrai nœud en tissu 🎀 */
+/* ==========================================================================
+   BOUTON CV EN FORME DE NŒUD 🎀
+   ========================================================================== */
 .cv-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    
-    /* Dimensions parfaites pour que le nœud garde ses proportions */
     width: 260px;
     height: 120px;
     padding: 10px 30px;
-    
-    background-color: #dfb76c; /* Couleur dorée */
+    background-color: #dfb76c;
     color: #ffffff !important;
     text-decoration: none !important;
     font-size: 1.05rem;
     font-weight: bold;
     text-align: center;
-    
     transition: all 0.3s ease;
     cursor: pointer;
     border: none;
 
-    /* Masque magique qui découpe le bouton avec la silhouette exacte du nœud en tissu */
     -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><path fill="black" d="M 90,43 C 75,35 30,14 12,17 C 4,18 1,24 1,40 C 1,56 4,62 12,63 C 30,66 75,45 90,57 C 90,62 92,75 100,75 C 108,75 110,62 110,57 C 125,45 170,66 188,63 C 196,62 199,56 199,40 C 199,24 196,18 188,17 C 170,14 125,35 110,43 C 110,38 108,25 100,25 C 92,25 90,38 90,43 Z"/></svg>');
     mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><path fill="black" d="M 90,43 C 75,35 30,14 12,17 C 4,18 1,24 1,40 C 1,56 4,62 12,63 C 30,66 75,45 90,57 C 90,62 92,75 100,75 C 108,75 110,62 110,57 C 125,45 170,66 188,63 C 196,62 199,56 199,40 C 199,24 196,18 188,17 C 170,14 125,35 110,43 C 110,38 108,25 100,25 C 92,25 90,38 90,43 Z"/></svg>');
     
@@ -186,152 +213,14 @@ h2 {
     mask-position: center;
 }
 
-/* ⚡ Effet de survol : le nœud entier passe au rose coquette */
 .cv-btn:hover {
-    background-color: #e5a4b4; /* Rose */
-    transform: scale(1.05); /* Petit effet de zoom mignon */
-}
-
-/* Style des cartes projets */
-.project-card {
-    background: #fffbfc;
-    border: 1.5px dashed #dfb76c;
-    padding: 1.8rem;
-    border-radius: 16px;
-    margin-top: 1.5rem;
-}
-.project-card h3 {
-    margin-top: 0;
-    color: #e5a4b4;
-}
-
-footer {
-    text-align: center;
-    padding: 4rem 1rem;
-    color: #b5a4a6;
-    font-size: 0.9rem;
+    background-color: #e5a4b4;
+    transform: scale(1.05);
 }
 
 /* ==========================================================================
-   STYLE DU TABLEAU PLEINE LARGEUR (SANS SCROLL HORIZONTAL) 🎀
+   TABLEAU DE COMPÉTENCES & POPUP MODALE 🎀
    ========================================================================== */
-
-.table-container {
-    width: 95%;          /* Occupe presque toute la largeur de la page */
-    max-width: 100%;     /* Permet de s'étendre au maximum sur les grands écrans */
-    margin: 2rem auto;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.table-section-title {
-    color: #c99d4f;
-    font-size: 1.25rem;
-    margin: 2rem 0 1rem 0;
-    border-left: 4px solid #dfb76c;
-    padding-left: 10px;
-    font-weight: 600;
-    text-align: left;
-}
-
-.table-responsive {
-    width: 100%;
-    overflow: hidden;    /* Empêche définitivement l'apparition de barres de défilement */
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(223, 183, 108, 0.12);
-    margin-bottom: 2rem;
-}
-
-.competence-table {
-    width: 100%;
-    table-layout: fixed; /* Force le tableau à respecter STRICTEMENT la largeur de l'écran */
-    border-collapse: collapse;
-    background-color: #ffffff;
-    font-size: 0.82rem;  /* Taille de police légèrement réduite pour tout faire tenir proprement */
-    text-align: center;
-}
-
-/* --- LARGEUR ET RÉPARTITION DES COLONNES --- */
-
-/* La colonne des réalisations prend 24% de la place */
-.competence-table th.col-real,
-.competence-table td.real-name {
-    width: 24%;
-    text-align: left;
-    padding-left: 12px;
-}
-
-/* La colonne période prend 10% */
-.competence-table th.col-period,
-.competence-table td.real-period {
-    width: 10%;
-}
-
-/* Les 6 colonnes de compétences se partagent équitablement les 66% restants (11% chacune) */
-.competence-table th:not(.col-real):not(.col-period),
-.competence-table td:not(.real-name):not(.real-period) {
-    width: 11%;
-}
-
-/* En-têtes du tableau */
-.competence-table th {
-    background-color: #dfb76c;
-    color: #ffffff;
-    padding: 10px 6px;   /* Paddings resserrés pour éviter les retours à la ligne inutiles */
-    font-weight: 600;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    font-size: 0.8rem;
-    line-height: 1.2;
-    word-wrap: break-word; /* Coupe proprement les mots longs si besoin */
-}
-
-/* Cellules */
-.competence-table td {
-    padding: 10px 6px;
-    border: 1px solid #f3e9dc;
-    color: #4a4a4a;
-    vertical-align: middle;
-    word-wrap: break-word;
-}
-
-/* Alignements spécifiques */
-.competence-table td.real-name {
-    color: #333333;
-    font-size: 0.85rem;
-    line-height: 1.3;
-}
-
-.competence-table td.real-period {
-    font-style: italic;
-    color: #777777;
-    font-size: 0.8rem;
-}
-
-/* Lignes alternées */
-.competence-table tbody tr:nth-child(even) {
-    background-color: #fdfaf6;
-}
-
-/* Cellules cochées avec les nœuds */
-.competence-table td.checked {
-    font-size: 1.25rem;
-    padding: 5px;
-}
-
-/* Animation sur les petits noeuds au survol */
-.competence-table td.checked a {
-    text-decoration: none;
-    display: inline-block;
-    transition: transform 0.2s ease, filter 0.2s ease;
-}
-
-.competence-table td.checked a:hover {
-    transform: scale(1.3) rotate(8deg);
-    filter: drop-shadow(0 2px 4px rgba(229, 164, 180, 0.5));
-}/* ==========================================================================
-   STYLE DU TABLEAU ET DE LA FENÊTRE SURGISSANTE (MODALE) 🎀
-   ========================================================================== */
-
 .table-container {
     width: 95%;
     max-width: 100%;
@@ -342,8 +231,8 @@ footer {
 
 .table-section-title {
     color: #c99d4f;
-    font-size: 1.2rem;
-    margin: 1.5rem 0 1rem 0;
+    font-size: 1.25rem;
+    margin: 2rem 0 1rem 0;
     border-left: 4px solid #dfb76c;
     padding-left: 10px;
     font-weight: 600;
@@ -406,7 +295,9 @@ footer {
 .competence-table td.real-name {
     color: #333333;
     font-size: 0.85rem;
-    line-height: 1.3;
+    line-height: 1.5;
+    text-align: left;
+    padding: 10px;
 }
 
 .competence-table td.real-period {
@@ -419,7 +310,6 @@ footer {
     background-color: #fdfaf6;
 }
 
-/* Bouton Nœud interactif */
 .bowtie-btn {
     background: none;
     border: none;
@@ -435,7 +325,7 @@ footer {
     filter: drop-shadow(0 2px 5px rgba(229, 164, 180, 0.6));
 }
 
-/* MODALE POPUP */
+/* Modale Popup */
 .modal {
     display: none;
     position: fixed;
@@ -455,7 +345,7 @@ footer {
     width: 90%;
     max-width: 500px;
     padding: 25px;
-    border-radius: 28px; /* Bords très arrondis comme demandé */
+    border-radius: 28px;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
     position: relative;
     text-align: center;
@@ -483,12 +373,11 @@ footer {
     font-size: 1.2rem;
 }
 
-/* Rectangle de l'image aux bords très arrondis */
 .modal-img-container {
     width: 100%;
     max-height: 320px;
     overflow: hidden;
-    border-radius: 22px; /* Bords du rectangle d'image */
+    border-radius: 22px;
     border: 1px solid #f3e9dc;
     margin-bottom: 15px;
     background-color: #fafafa;
@@ -507,6 +396,7 @@ footer {
     line-height: 1.4;
     margin: 0;
 }
+
 .modal-action {
     margin-top: 15px;
     text-align: center;
@@ -528,9 +418,11 @@ footer {
 .btn-proof:hover {
     background-color: #c99d4f;
     transform: translateY(-2px);
-    
 }
-/* --- Grille et Cartes Projets --- */
+
+/* ==========================================================================
+   CARTES PROJETS
+   ========================================================================== */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -588,7 +480,10 @@ footer {
     text-align: center;
     margin-top: 10px;
 }
-/* --- Style de la section Contact --- */
+
+/* ==========================================================================
+   PAGE CONTACT
+   ========================================================================== */
 .contact-card {
     background: #ffffff;
     border: 2px solid #fff0f2;
@@ -625,14 +520,13 @@ footer {
     color: #ffffff;
     border-style: solid;
 }
-.real-name {
-    text-align: left;
-    line-height: 1.5;
-    padding: 10px;
-}
-/* Fil d'Ariane : affichage dynamique du nœud sur l'élément actif */
-nav a.active::before {
-    content: "🎀 ";
-    display: inline-block;
-    margin-right: 4px;
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 4rem 1rem;
+    color: #b5a4a6;
+    font-size: 0.9rem;
 }
